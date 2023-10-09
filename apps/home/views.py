@@ -11,7 +11,7 @@ def pagina_inicial(request):
     links = Link.objects.filter(usuario=request.user)
     try:
         visualizacao = links.first().visualizacao
-    except NoneType:
+    except AttributeError:
         visualizacao = 0
     context = {
         'links': links,
