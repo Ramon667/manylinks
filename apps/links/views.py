@@ -20,7 +20,7 @@ def add_link(request):
             messages.success(request, 'Link criado com sucesso')
             return redirect('links:lista')
         else:
-            messages.errors(request, f'Erro no formulários: {form.errors}')
+            messages.warning(request, f'Erro no formulários: {form.errors}')
             return redirect('links:add_link')
     form = LinkForm()
     context['form'] = form
